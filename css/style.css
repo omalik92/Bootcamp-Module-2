@@ -8,6 +8,7 @@
 html {
   /* set 1rem to 10px instead of native 16px to make it easier to calculate font-size values for the rest of the page (e.g. 1.6rem is 16px, 2.0rem is 20px, etc.) */
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 body {
   background-color: rgb(187, 185, 185);
@@ -135,8 +136,8 @@ nav a:not(:last-child)::after {
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 0.15fr 1fr 1fr;
   grid-template-areas:
-    "profile-pic title social-media"
-    "profile-pic description description"
+    "profile-pic title title"
+    "profile-pic job-title-1 job-title-1"
     "profile-pic description description";
 }
 
@@ -157,25 +158,41 @@ nav a:not(:last-child)::after {
 
 #title h2 {
   color: #1a0854;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   font-size: 2rem;
 }
 
-#job-title {
+#job-title-1 {
   color: grey;
   font-family: sans-serif;
   margin-bottom: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
-#title h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-#description {
-  grid-area: description;
+#job-title-2 {
+  color: grey;
   font-family: sans-serif;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  display: none;
+}
+
+#about-1 {
+  margin-bottom: 0.8rem;
+  font-size: 1.7rem;
+}
+
+#description-1 {
+  grid-area: description;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+#description-2 {
+  grid-area: description;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  display: none;
 }
 
 #social-media {
@@ -211,7 +228,7 @@ nav a:not(:last-child)::after {
   align-items: flex-end;
   margin: 0.25rem;
 }
-#projects a {
+#projects p {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 15px;
   height: 25px;
@@ -299,6 +316,17 @@ nav a:not(:last-child)::after {
   background-color: var(--gin);
   padding: 4rem;
   border-radius: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#contact-me p {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  color: var(--outer-space);
+  text-decoration: underline;
 }
 
 #resume {
@@ -310,36 +338,61 @@ nav a:not(:last-child)::after {
 }
 
 @media screen and (max-width: 400px) {
+  header {
+    display: block;
+  }
   nav {
     display: block;
-  } /* hide it elsewhere */
-
-  #title-1,
-  #title-2,
-  #title-3,
-  #title-4 {
-    display: none;
+    margin: auto 2rem;
+    margin-top: 2rem;
   }
+  nav a {
+    font-size: 1.5rem;
+  }
+
+  /* hide it elsewhere */
 
   #heroGrid {
     display: grid;
-    grid-template-rows: 30rem 70rem 30rem 30rem;
+    grid-template-rows: 10rem 40rem 10rem 70rem 10rem 30rem 10rem 30rem;
     grid-template-columns: 1fr 3fr;
     grid-template-areas:
+      "title-1 title-1"
       "about-me about-me"
+      "title-2 title-2"
       "projects projects"
+      "title-3 title-3"
       "contact-me contact-me"
+      "title-4 title-4"
       "resume resume";
   }
 
   .about-me-grid {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "profile-pic social-media"
+      "profile-pic profile-pic"
       "title title"
-      "description description";
+      "job-title-2 job-title-2"
+      "about-1 about-1"
+      "description-2 description-2";
+  }
+
+  #job-title-1 {
+    display: none;
+  }
+
+  #job-title-2 {
+    display: block;
+  }
+
+  #description-1 {
+    display: none;
+  }
+
+  #description-2 {
+    display: block;
   }
 
   #about-me {
@@ -348,5 +401,25 @@ nav a:not(:last-child)::after {
 
   #projects {
     padding: 1rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "project-1 project-1"
+      "project-2 project-3"
+      "project-4 project-5"
+      "project-6 project-7";
+  }
+
+  #contact-me {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  #contact-me p {
+    font-size: 1.5rem;
   }
 }

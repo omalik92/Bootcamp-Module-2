@@ -341,7 +341,7 @@ nav a:not(:last-child)::after {
   border-radius: 0.8rem;
 }
 /*media query for mobile viewing*/
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   /*positioning of navbar adjusted to fit below title*/
   header {
     display: block;

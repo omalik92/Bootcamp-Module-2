@@ -1,19 +1,22 @@
+/*common colors set as variables to make easier changes to scheme*/
 :root {
   --outer-space: #33393f;
   --bright-turquoise: #2aefcb;
   --gin: #e0eae4;
   --heliotrope: #e866ec;
+  --theme-purple: #1a0854;
 }
 
 html {
   /* set 1rem to 10px instead of native 16px to make it easier to calculate font-size values for the rest of the page (e.g. 1.6rem is 16px, 2.0rem is 20px, etc.) */
   font-size: 62.5%;
+  /*smooth scrolling property ser*/
   scroll-behavior: smooth;
 }
 body {
   background-color: rgb(187, 185, 185);
 }
-
+/*header with flex box property to dynamically adjust to changing browser widths*/
 header {
   display: flex;
   align-items: center;
@@ -25,7 +28,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+/*heading title for webpage text shadow used to create glow effect*/
 h1 {
   padding-left: 2rem;
   font-family: Arial, Helvetica, sans-serif;
@@ -35,32 +38,33 @@ h1 {
   color: var(--gin);
   text-shadow: 0px 0px 8px var(--heliotrope), 0 0 15px var(--outer-space);
 }
-
+/*flex box settings to share header space evenly between heading and navbar*/
 h1,
 nav {
   flex: 1 0 50%;
 }
 
-a {
+/*navigation bar text settings*/
+nav a {
   text-decoration: none;
   margin: 0px 10px;
   color: var(--gin);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 2rem;
 }
-
+/*positioning of links within navbar using flexbox*/
 nav {
   display: flex;
   justify-content: flex-end;
   padding-right: 2rem;
 }
-
+/*pseudo element for separation of navlinks*/
 nav a:not(:last-child)::after {
   content: "|";
   position: relative;
   right: -1rem;
 }
-
+/*webpage layout below header setup using grid*/
 #heroGrid {
   display: grid;
   grid-template-rows: 30rem 100rem 30rem 30rem;
@@ -71,10 +75,10 @@ nav a:not(:last-child)::after {
     "title-3 contact-me"
     "title-4 resume";
 }
-
+/*side bar with titled sections. Formatting properties to be consolidated*/
 #title-1 {
   grid-area: title-1;
-  background-color: #1a0854;
+  background-color: var(--theme-purple);
   color: var(--gin);
   display: flex;
   align-items: flex-start;
@@ -82,47 +86,48 @@ nav a:not(:last-child)::after {
   justify-content: flex-end;
   font-size: 2rem;
   padding-right: 2rem;
-  border-bottom: solid whitesmoke;
+  border-bottom: solid var(--gin);
 }
 
 #title-2 {
   grid-area: title-2;
-  background-color: #1a0854;
+  background-color: var(--theme-purple);
   color: var(--gin);
   display: flex;
+  align-items: flex-start;
   padding-top: 6rem;
-  justify-content: flex-end;
   justify-content: flex-end;
   font-size: 2rem;
   padding-right: 2rem;
-  border-bottom: solid whitesmoke;
+  border-bottom: solid var(--gin);
 }
 
 #title-3 {
   grid-area: title-3;
-  background-color: #1a0854;
+  background-color: var(--theme-purple);
   color: var(--gin);
   display: flex;
+  align-items: flex-start;
   padding-top: 6rem;
-  justify-content: flex-end;
   justify-content: flex-end;
   font-size: 2rem;
   padding-right: 2rem;
-  border-bottom: solid whitesmoke;
+  border-bottom: solid var(--gin);
 }
 
 #title-4 {
   grid-area: title-4;
-  background-color: #1a0854;
+  background-color: var(--theme-purple);
   color: var(--gin);
   display: flex;
+  align-items: flex-start;
   padding-top: 6rem;
-  justify-content: flex-end;
   justify-content: flex-end;
   font-size: 2rem;
   padding-right: 2rem;
+  border-bottom: solid var(--gin);
 }
-
+/*background for content in about me section*/
 #about-me {
   grid-area: about-me;
   margin: 2rem 2rem;
@@ -130,7 +135,7 @@ nav a:not(:last-child)::after {
   padding: 4rem;
   border-radius: 0.8rem;
 }
-
+/*about me content structured within a grid*/
 .about-me-grid {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -161,14 +166,14 @@ nav a:not(:last-child)::after {
   margin-bottom: 1.2rem;
   font-size: 2rem;
 }
-
+/*format for desktop viewing*/
 #job-title-1 {
   color: grey;
   font-family: sans-serif;
   margin-bottom: 2rem;
   font-size: 1.8rem;
 }
-
+/*format for mobile viewing*/
 #job-title-2 {
   color: grey;
   font-family: sans-serif;
@@ -181,24 +186,20 @@ nav a:not(:last-child)::after {
   margin-bottom: 0.8rem;
   font-size: 1.7rem;
 }
-
+/*format for desktop viewing*/
 #description-1 {
   grid-area: description;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
 }
-
+/*format for mobile viewing*/
 #description-2 {
   grid-area: description;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   display: none;
 }
-
-#social-media {
-  grid-area: social-media;
-}
-
+/* background for content within projects (to be consildated*/
 #projects {
   grid-area: projects;
   margin: 2rem 2rem;
@@ -206,7 +207,7 @@ nav a:not(:last-child)::after {
   padding: 4rem;
   border-radius: 0.8rem;
 }
-
+/*content for projects set within grid*/
 .projects-grid {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -216,7 +217,7 @@ nav a:not(:last-child)::after {
     "project-2 project-3 project-4"
     "project-5 project-6 project-7";
 }
-
+/*project 1 tile*/
 #project-1 {
   grid-area: project-1;
   background-image: url(../images/Accessible\ html.png);
@@ -228,6 +229,7 @@ nav a:not(:last-child)::after {
   align-items: flex-end;
   margin: 0.25rem;
 }
+/*tile title formatting*/
 #projects p {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 15px;
@@ -239,7 +241,7 @@ nav a:not(:last-child)::after {
   margin: 0;
   padding-bottom: 3rem;
 }
-
+/*project 2 tile (place-holder)*/
 #project-2 {
   grid-area: project-2;
   background-image: url(../images/Project\ Place\ Holder.jpg);
@@ -251,7 +253,7 @@ nav a:not(:last-child)::after {
   align-items: flex-end;
   margin: 0.25rem;
 }
-
+/*project 2 tile (place-holder)*/
 #project-3 {
   grid-area: project-3;
   background-image: url(../images/Project\ Place\ Holder.jpg);
@@ -263,7 +265,7 @@ nav a:not(:last-child)::after {
   align-items: flex-end;
   margin: 0.25rem;
 }
-
+/*project 2 tile (place-holder)*/
 #project-4 {
   grid-area: project-4;
   background-image: url(../images/Project\ Place\ Holder.jpg);
@@ -275,7 +277,7 @@ nav a:not(:last-child)::after {
   align-items: flex-end;
   margin: 0.25rem;
 }
-
+/*project 2 tile (place-holder)*/
 #project-5 {
   grid-area: project-5;
   background-image: url(../images/Project\ Place\ Holder.jpg);
@@ -287,6 +289,7 @@ nav a:not(:last-child)::after {
   align-items: flex-end;
   margin: 0.25rem;
 }
+/*project 2 tile (place-holder)*/
 #project-6 {
   grid-area: project-6;
   background-image: url(../images/Project\ Place\ Holder.jpg);
@@ -298,6 +301,7 @@ nav a:not(:last-child)::after {
   align-items: flex-end;
   margin: 0.25rem;
 }
+/*project 2 tile (place-holder)*/
 #project-7 {
   grid-area: project-7;
   background-image: url(../images/Project\ Place\ Holder.jpg);
@@ -309,7 +313,7 @@ nav a:not(:last-child)::after {
   align-items: flex-end;
   margin: 0.25rem;
 }
-
+/*contact-me background*/
 #contact-me {
   grid-area: contact-me;
   margin: 2rem 2rem;
@@ -321,14 +325,14 @@ nav a:not(:last-child)::after {
   align-items: center;
   justify-content: space-around;
 }
-
+/*contact-me content styling*/
 #contact-me p {
   font-size: 1.5rem;
   font-family: sans-serif;
   color: var(--outer-space);
   text-decoration: underline;
 }
-
+/*resume content background*/
 #resume {
   grid-area: resume;
   margin: 2rem 2rem;
@@ -336,8 +340,9 @@ nav a:not(:last-child)::after {
   padding: 4rem;
   border-radius: 0.8rem;
 }
-
+/*media query for mobile viewing*/
 @media screen and (max-width: 400px) {
+  /*positioning of navbar adjusted to fit below title*/
   header {
     display: block;
   }
@@ -350,7 +355,7 @@ nav a:not(:last-child)::after {
     font-size: 1.5rem;
   }
 
-  /* hide it elsewhere */
+  /*web page structure altered to remove side-bar and add titles between sections*/
 
   #heroGrid {
     display: grid;
@@ -366,7 +371,7 @@ nav a:not(:last-child)::after {
       "title-4 title-4"
       "resume resume";
   }
-
+  /*about me layout changed for mobile viewing*/
   .about-me-grid {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -402,7 +407,7 @@ nav a:not(:last-child)::after {
   #projects {
     padding: 1rem;
   }
-
+  /*projects grid structure changed for mobile viewing*/
   .projects-grid {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -413,12 +418,12 @@ nav a:not(:last-child)::after {
       "project-4 project-5"
       "project-6 project-7";
   }
-
+  /*contact me flex properties amended for mobile viewing*/
   #contact-me {
     flex-direction: column;
     padding: 1rem;
   }
-
+  /*contact me font amended for mobile viewing*/
   #contact-me p {
     font-size: 1.5rem;
   }

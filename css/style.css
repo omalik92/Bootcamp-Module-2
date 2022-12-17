@@ -340,7 +340,7 @@ nav a:not(:last-child)::after {
   padding: 4rem;
   border-radius: 0.8rem;
 }
-/*media query for mobile viewing*/
+/*media query for mobile viewing on iphone 12 pro max*/
 @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
   /*positioning of navbar adjusted to fit below title*/
   header {
